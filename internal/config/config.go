@@ -17,8 +17,8 @@ func Load() *Config {
 
 	cfg := &Config{
 		NatsURL:  getEnv("NATS_URL", "nats://localhost:4222"),
-		Stream:   getEnv("NATS_STREAM", "GEO_STREAM"),
-		Subject:  getEnv("NATS_SUBJECT", "geo.coordinates"),
+		Stream:   getEnv("NATS_STREAM", "COORDINATES"),
+		Subject:  getEnv("NATS_SUBJECT", "coordinates"),
 		HTTPPort: getEnv("HTTP_PORT", "8080"),
 	}
 
