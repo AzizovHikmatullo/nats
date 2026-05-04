@@ -31,7 +31,7 @@ func New(url, stream, subject string) (*Client, error) {
 	_, err = js.CreateOrUpdateStream(ctx, jetstream.StreamConfig{
 		Name:     stream,
 		Subjects: []string{subject},
-		Storage:  jetstream.FileStorage,
+		Storage:  jetstream.MemoryStorage,
 	})
 	if err != nil {
 		return nil, err
