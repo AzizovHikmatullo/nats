@@ -32,6 +32,8 @@ func New(url, stream, subject string) (*Client, error) {
 		Name:     stream,
 		Subjects: []string{subject},
 		Storage:  jetstream.MemoryStorage,
+		MaxAge:   time.Hour,
+		MaxMsgs:  100000,
 	})
 	if err != nil {
 		return nil, err
